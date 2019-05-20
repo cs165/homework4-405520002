@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="musicbox-style.css"/>
     <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
-    <script src="./lib/dancer.min.js"></script>
+    <!----<script src="./lib/dancer.min.js"></script>-->
+    <script src="./lib/dancer.js"></script>
     <script src="./lib/fetch.js"></script>
     <script src="audio-player.js" defer></script>
 
@@ -19,6 +20,7 @@
     <script src="gif-display.js" defer></script>
     <script src="music-screen.js" defer></script>
     <script src="app.js" defer></script>
+    <script src="demo.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -28,17 +30,29 @@
       <fieldset>
         <form>
           <h2>1. Choose a song:</h2>
-          <select id="song-selector"></select>
+          <select id="song-selector">
+          </select>
 
           <h2>2. Choose a theme:</h2>
           <input type="text" id="query-input" placeholder="Enter a word or phrase" />
-          <div id="error" class="inactive">Not enough gifs for this theme. Please try another.</div>
+          <div id='hint' class='inactive'></div>
+          <div id='error' class='inactive'></div>
 
-          <input type="submit" value="Go" />
+          <input type="submit" id='go' value="Go" />
         </form>
       </fieldset>
     </div>
+    <div id='loading' class ='inactive'><span id='word'>loading.....</span></div>
+<div id='main' class='inactive '>
+  <div class='bodyarea' ></div>
+    <div class='play_area'>
+      <div class='playmark'></div>
+    </div>
+  
+  
 
+
+</div>
     <!-- TODO(you): Add the HTML necessary to complete the assignment! -->
 
   </body>

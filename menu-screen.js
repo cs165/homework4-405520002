@@ -2,9 +2,27 @@
 // the music visualizer.
 //
 // See HW4 writeup for more hints and details.
+
 class MenuScreen {
-  constructor() {
+  constructor(containerElement) {
+      this.containerElement = containerElement;
+
+    }
     // TODO(you): Implement the constructor and add fields as necessary.
+  show(){
+  
+    this.containerElement.classList.remove('inactive');
   }
-  // TODO(you): Add methods as necessary.
+
+  hide(){
+   this.containerElement.classList.add('inactive');
+   this.containerElement.innerHTML='';
+
+  }
+  
+
+  
+
+
+  
 }
