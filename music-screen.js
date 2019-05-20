@@ -44,12 +44,18 @@ class MusicScreen {
 
 
   _onJsonReady(json) {
+  
+
     console.log('catch the gif');
     console.log(json['data']);
     const json2 = json.data[count].images.downsized.url;
     const playscreen = document.querySelector('.bodyarea')
     count = parseInt((theme.length) * Math.random());
+    var loading = document.getElementById('loading');
+    loading.classList.remove('active');
+    loading.classList.add('inactive');
     const gif = new GifDisplay(playscreen, json2);
+   
     random_array.push(count);
     setInterval(function () {
       if (playmark[playmark.length - 1] == 'play') {
@@ -68,7 +74,7 @@ class MusicScreen {
     setInterval(function () {
       if (playmark[playmark.length - 1] == 'play') {
         console.log('listener');
-        if (playscreen.innerHTML == '') {
+        if (playscreen.innerHTML == '') { 
           count3=parseInt((theme.length) * Math.random());
           while (random_array.indexOf(count) == 1||count==count3) {
             count = parseInt((theme.length) * Math.random());
@@ -108,6 +114,7 @@ class MusicScreen {
   }
 
   _onResponse(response) {
+ 
     return response.json();
 
   }

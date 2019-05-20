@@ -11,7 +11,7 @@ class GifDisplay {
     image.src = imageUrl;
     image.style.width='100%';
     containerElement.append(image);
-    
+  
     // TODO(you): Implement the constructor and add fields as necessary.
   }
 

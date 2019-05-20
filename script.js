@@ -85,6 +85,7 @@ var onKick = () => {
 
 var load_music = () => {
 
+
   if (control2[0] == 'ok') {
     playerapp = new AudioPlayer();
     for (let j = 0; j < 6; j++) {
@@ -135,10 +136,16 @@ function active(element) {
 }
 
 var clickgo = (event) => {
+  var loading = document.getElementById('loading');
+  loading.classList.remove('inactive');
+  loading.classList.add('active');
+  console.log("active loading...");
+ 
 
   control2.push('ok');
   for (let j = 0; j < 10; j++) {
     if (input.value == theme[j]) {
+     
       x = 1;
       console.log('click');
       query = input.value;
@@ -157,8 +164,6 @@ var clickgo = (event) => {
     active(error);
     error.textContent = 'Not enough gifs for this theme. Please try another.';
     event.preventDefault();
-
-
   }
   else { console.log('uuuuuu'); }
 
