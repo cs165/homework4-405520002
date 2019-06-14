@@ -91,7 +91,7 @@ var load_music = () => {
     for (let j = 0; j < 6; j++) {
       if (musicselect.value == j) {
         console.log(Object(musicdata)[j])
-        event.preventDefault();
+        //event.preventDefault();
         playerapp.setSong(playurl[j]);
         playerapp.setKickCallback(onKick);
         playerapp.play();
